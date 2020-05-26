@@ -877,6 +877,10 @@
           "named": true
         },
         {
+          "type": "function_documentation",
+          "named": true
+        },
+        {
           "type": "function_name",
           "named": true
         },
@@ -2219,6 +2223,10 @@
   {
     "type": "function",
     "named": false
+  },
+  {
+    "type": "function_documentation",
+    "named": true
   },
   {
     "type": "goto",

@@ -862,22 +862,34 @@
       "type": "STRING",
       "value": ";"
     },
+    "function_documentation": {
+      "type": "STRING",
+      "value": "---"
+    },
     "function_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "function"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_name"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_function_body"
-        }
-      ]
+      "type": "PREC_DYNAMIC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "function_documentation"
+          },
+          {
+            "type": "STRING",
+            "value": "function"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "function_name"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_function_body"
+          }
+        ]
+      }
     },
     "local_function_statement": {
       "type": "SEQ",
@@ -902,7 +914,7 @@
     },
     "function_call_statement": {
       "type": "PREC_DYNAMIC",
-      "value": 1,
+      "value": 2,
       "content": {
         "type": "CHOICE",
         "members": [
