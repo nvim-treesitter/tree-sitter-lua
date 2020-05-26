@@ -1,0 +1,21 @@
+============================================
+Simple documentation
+============================================
+
+--- hello
+-- world
+function cool_function()
+  return true
+end
+
+----------
+
+(program
+  (function
+    (function_comment)
+    (function_name (identifier)) (parameters)
+      (return_statement (true))))
+
+============================================
+TODO: We should make it so that those show up as special comments for the function
+============================================

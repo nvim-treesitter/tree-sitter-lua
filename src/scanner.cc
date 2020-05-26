@@ -7,7 +7,8 @@ namespace {
 
   enum TokenType {
     COMMENT,
-    STRING
+    STRING,
+    FUNCTION_COMMENT
   };
 
   struct Scanner {
@@ -172,6 +173,33 @@ namespace {
 
         // Try to make a comment
         else if (scan_sequence(lexer, "--")) {
+
+          // Try to make a function comment
+          //    if currently valid
+          if (valid_symbols[FUNCTION_COMMENT]) {
+            if (scan_sequence(lexer, "-")) {
+              lexer->result_symbol = FUNCTION_COMMENT;
+
+              // Do while cause we've already consued the first "---"
+              do {
+                while (lexer->lookahead != '\n' && lexer->lookahead != 0) {
+                  advance(lexer);
+                }
+
+                if (lexer->lookahead == '\n') {
+                  advance(lexer);
+                }
+              } while (
+                  // We only ask for "--" from now on because we're in a "function comment" block
+                  scan_sequence(lexer, "--")
+              );
+
+              return true;
+            }
+          }
+
+          return false;
+
           while (iswspace(lexer->lookahead) && lexer->lookahead != '\n' && lexer->lookahead != 0) {
             advance(lexer);
           }

@@ -20,6 +20,7 @@ const PREC = {
 module.exports = grammar({
   name: "lua",
 
+  // extras: $ => [$.comment, /[\s\n]/],
   extras: $ => [$.comment, /[\s\n]/],
 
   inline: $ => [$._statement],
@@ -31,10 +32,14 @@ module.exports = grammar({
     [$.function_name, $.function_name_field]
   ],
 
-  externals: $ => [$.comment, $.string],
+  externals: $ => [$.c_comment, $.string, $.function_comment],
 
   rules: {
-    program: $ => seq(repeat($._statement), optional($.return_statement)),
+    program: $ =>
+      seq(
+        repeat($._statement),
+        optional(alias($.return_statement, $.module_return_statement))
+      ),
 
     // Return statement
     return_statement: $ =>
@@ -67,7 +72,8 @@ module.exports = grammar({
 
         alias($.function_statement, $.function),
         alias($.local_function_statement, $.local_function),
-        alias($.function_call_statement, $.function_call)
+        alias($.function_call_statement, $.function_call),
+        $.comment
       ),
 
     // Statements: Variable eclarations
@@ -188,13 +194,13 @@ module.exports = grammar({
     _empty_statement: $ => ";",
 
     // Statements: Function statements
-    function_documentation: $ => "---",
 
     function_statement: $ =>
-      prec.dynamic(
+      prec.left(
         PREC.FUNCTION,
         seq(
-          $.function_documentation,
+          // TODO: Add function comments
+          optional($.function_comment),
           "function",
           $.function_name,
           $._function_body
@@ -392,10 +398,49 @@ module.exports = grammar({
     false: $ => "false",
 
     // Identifier
-    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/
+    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
+
+    comment: $ =>
+      token(
+        choice(
+          seq("--", /.*\r?\n/),
+          comment_leveller(0),
+          comment_leveller(1),
+          comment_leveller(2),
+          comment_leveller(3),
+          comment_leveller(4)
+        )
+      )
   }
 });
 
 function sequence(rule) {
   return seq(rule, repeat(seq(",", rule)));
+}
+
+// function comment_leveller(level) {
+//   let closing_token = "".concat(']', "=".repeat(level), ']');
+//   return seq(
+//     '--',
+//     /\s*/,
+//     "".concat('[', "=".repeat(level), '['),
+//     new RegExp("(.|\r?\n)*?!(" + "\]" + "=".repeat(level) + "\]" + ")", "g"),
+//     closing_token,
+//   );
+// }
+
+function comment_leveller(level) {
+  return new RegExp(
+    // Starts a comment
+    "--" +
+      "\\s*" +
+      // Opening brackets
+      "".concat("\\[", "=".repeat(level), "\\[") +
+      // Match "Non-Endy" type stuff.
+      "([^\\]][^=]|\\r?\\n)*" +
+      // Start on ending
+      "\\]+" +
+      "".concat("=".repeat(level), "\\]"),
+    "g"
+  );
 }
