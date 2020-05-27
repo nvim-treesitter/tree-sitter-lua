@@ -150,6 +150,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "condition_expression",
     "named": true,
     "fields": {},
@@ -901,10 +906,6 @@
           "named": true
         },
         {
-          "type": "function_comment",
-          "named": true
-        },
-        {
           "type": "function_name",
           "named": true
         },
@@ -926,6 +927,10 @@
         },
         {
           "type": "local_variable_declaration",
+          "named": true
+        },
+        {
+          "type": "lua_documentation",
           "named": true
         },
         {
@@ -1357,6 +1362,10 @@
           "named": true
         },
         {
+          "type": "lua_documentation",
+          "named": true
+        },
+        {
           "type": "parameters",
           "named": true
         },
@@ -1534,6 +1543,25 @@
     }
   },
   {
+    "type": "lua_documentation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "parameter_documentation",
+          "named": true
+        },
+        {
+          "type": "return_description",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "module_return_statement",
     "named": true,
     "fields": {},
@@ -1607,6 +1635,42 @@
         }
       ]
     }
+  },
+  {
+    "type": "parameter_description",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "parameter_documentation",
+    "named": true,
+    "fields": {
+      "description": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter_description",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "parameter_name",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "parameters",
@@ -1792,6 +1856,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "return_description",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "return_statement",
@@ -1992,6 +2061,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "lua_documentation",
           "named": true
         },
         {
@@ -2320,10 +2393,6 @@
     "named": true
   },
   {
-    "type": "comment",
-    "named": true
-  },
-  {
     "type": "do",
     "named": false
   },
@@ -2350,10 +2419,6 @@
   {
     "type": "function",
     "named": false
-  },
-  {
-    "type": "function_comment",
-    "named": true
   },
   {
     "type": "goto",
