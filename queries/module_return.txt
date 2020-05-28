@@ -1,1 +1,3 @@
-(module_return_statement)+
+(parameter_documentation
+    name: (identifier) @name
+    description: (parameter_description) @description)

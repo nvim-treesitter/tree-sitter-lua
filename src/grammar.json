@@ -883,13 +883,9 @@
       "type": "STRING",
       "value": ";"
     },
-    "parameter_name": {
-      "type": "PATTERN",
-      "value": "[a-z_]+"
-    },
     "parameter_description": {
       "type": "PATTERN",
-      "value": "[a-z_]+"
+      "value": "[^\\n]*"
     },
     "parameter_documentation": {
       "type": "SEQ",
@@ -903,7 +899,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "parameter_name"
+            "name": "identifier"
           }
         },
         {
@@ -919,8 +915,8 @@
           }
         },
         {
-          "type": "PATTERN",
-          "value": "[^\\n]*\\n"
+          "type": "STRING",
+          "value": "\n"
         }
       ]
     },

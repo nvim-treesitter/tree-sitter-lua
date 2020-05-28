@@ -40,10 +40,10 @@ end
   (function
     (lua_documentation
       (parameter_documentation
-        name: (parameter_name)
+        name: (identifier)
         description: (parameter_description))
       (parameter_documentation
-        name: (parameter_name)
+        name: (identifier)
         description: (parameter_description))
 
       (return_description))
@@ -73,10 +73,10 @@ end
   (local_function
     (lua_documentation
       (parameter_documentation
-        name: (parameter_name)
+        name: (identifier)
         description: (parameter_description))
       (parameter_documentation
-        name: (parameter_name)
+        name: (identifier)
         description: (parameter_description))
 
       (return_description))
@@ -108,7 +108,7 @@ end
   (variable_declaration
     (lua_documentation
       (parameter_documentation
-        name: (parameter_name)
+        name: (identifier)
         description: (parameter_description)))
 
     (variable_declarator

@@ -195,18 +195,17 @@ module.exports = grammar({
     _empty_statement: $ => ';',
 
     // Statements: Function statements
-    parameter_name: $ => /[a-z_]+/,
-    parameter_description: $ => /[a-z_]+/,
+    parameter_description: $ => /[^\n]*/,
 
     parameter_documentation: $ =>
       // seq('--@param ', $.identifier, ':', /[^\n]*\n/),
       // seq('--@param p:', /[^\n]*\n/),
       seq(
         /--@param\s*/,
-        field('name', $.parameter_name),
+        field('name', $.identifier),
         /\s*:/,
         field('description', $.parameter_description),
-        /[^\n]*\n/,
+        '\n',
       ),
 
     return_description: $ => seq(/--@returns[^\n]*\n/),

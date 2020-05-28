@@ -1637,11 +1637,6 @@
     }
   },
   {
-    "type": "parameter_description",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "parameter_documentation",
     "named": true,
     "fields": {
@@ -1660,17 +1655,12 @@
         "required": true,
         "types": [
           {
-            "type": "parameter_name",
+            "type": "identifier",
             "named": true
           }
         ]
       }
     }
-  },
-  {
-    "type": "parameter_name",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "parameters",
@@ -2269,6 +2259,10 @@
     }
   },
   {
+    "type": "\n",
+    "named": false
+  },
+  {
     "type": "#",
     "named": false
   },
@@ -2463,6 +2457,10 @@
   {
     "type": "or",
     "named": false
+  },
+  {
+    "type": "parameter_description",
+    "named": true
   },
   {
     "type": "property_identifier",
