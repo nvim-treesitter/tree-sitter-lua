@@ -2020,7 +2020,104 @@
   {
     "type": "variable_declaration",
     "named": true,
-    "fields": {},
+    "fields": {
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "lua_documentation",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "binary_operation",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "global_variable",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "spread",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "unary_operation",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -2051,10 +2148,6 @@
         },
         {
           "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "lua_documentation",
           "named": true
         },
         {
@@ -2091,10 +2184,6 @@
         },
         {
           "type": "unary_operation",
-          "named": true
-        },
-        {
-          "type": "variable_declarator",
           "named": true
         }
       ]
@@ -2109,67 +2198,7 @@
       "required": true,
       "types": [
         {
-          "type": "binary_operation",
-          "named": true
-        },
-        {
-          "type": "false",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_variable",
-          "named": true
-        },
-        {
           "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "next",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "self",
-          "named": true
-        },
-        {
-          "type": "spread",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        },
-        {
-          "type": "unary_operation",
           "named": true
         }
       ]

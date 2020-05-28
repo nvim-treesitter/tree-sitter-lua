@@ -79,8 +79,12 @@ module.exports = grammar({
     // Statements: Variable eclarations
     variable_declaration: $ =>
       seq(
-        optional($.lua_documentation),
-        sequence(alias($._variable_declarator, $.variable_declarator)),
+        // optional($.lua_documentation),
+        // This is the way to select multiple x, y = func()
+        // sequence(alias($._variable_declarator, $.variable_declarator)),
+        // alias($._variable_declarator, $.variable_declarator),
+        field('documentation', optional($.lua_documentation)),
+        field('variable', $._variable_declarator),
         '=',
         sequence($._expression),
       ),

@@ -181,51 +181,28 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "lua_documentation"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "FIELD",
+          "name": "documentation",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "lua_documentation"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_variable_declarator"
-              },
-              "named": true,
-              "value": "variable_declarator"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": ","
-                  },
-                  {
-                    "type": "ALIAS",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "_variable_declarator"
-                    },
-                    "named": true,
-                    "value": "variable_declarator"
-                  }
-                ]
-              }
-            }
-          ]
+          "type": "FIELD",
+          "name": "variable",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_variable_declarator"
+          }
         },
         {
           "type": "STRING",
