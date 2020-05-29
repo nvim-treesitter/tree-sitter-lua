@@ -65,6 +65,20 @@ c = i * 2 ^ j
       (binary_operation (number) (identifier)))))
 
 ============================================
+Weird Unary operations
+============================================
+
+food_table_size = - -a
+
+---
+
+(program
+  (variable_declaration
+    (variable_declarator (identifier))
+    (unary_operation
+      (unary_operation (identifier)))))
+
+============================================
 Unary operations
 ============================================
 

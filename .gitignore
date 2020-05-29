@@ -1,3 +1,6 @@
 node_modules
 build
 *.log
+
+# Seems like we'd want to ignore this...
+tree-sitter-lua.wasm

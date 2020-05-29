@@ -1,0 +1,13 @@
+============================================
+Module Returns
+============================================
+
+local x = {}
+
+return x
+
+---
+
+(program
+  (local_variable_declaration (variable_declarator (identifier)) (table))
+  (module_return_statement (identifier)))

@@ -1,0 +1,156 @@
+============================================
+Simple documentation
+============================================
+
+--- hello world
+--
+-- wow cool
+function cool_function()
+  return true
+end
+
+----------
+
+(program
+  (function
+    (lua_documentation)
+    (function_name (identifier)) (parameters)
+      (return_statement (true))))
+
+============================================
+TODO: We should make it so that those show up as special comments for the function
+============================================
+
+
+============================================
+Full documentation
+============================================
+
+--- A function description
+--@param p: param value
+--@param x: another value
+--@returns true
+function cool_function(p, x)
+  return true
+end
+
+----------
+
+(program
+  (function
+    (lua_documentation
+      (parameter_documentation
+        name: (identifier)
+        description: (parameter_description))
+      (parameter_documentation
+        name: (identifier)
+        description: (parameter_description))
+
+      (return_description))
+
+    (function_name (identifier))
+    (parameters
+      (identifier)
+      (identifier))
+
+    (return_statement (true))))
+
+============================================
+Local documentation
+============================================
+
+--- A function description
+--@param p: param value
+--@param x: another value
+--@returns true
+local function cool_function(p, x)
+  return true
+end
+
+----------
+
+(program
+  (local_function
+    (lua_documentation
+      (parameter_documentation
+        name: (identifier)
+        description: (parameter_description))
+      (parameter_documentation
+        name: (identifier)
+        description: (parameter_description))
+
+      (return_description))
+
+    (identifier)
+    (parameters
+      (identifier)
+      (identifier))
+
+    (return_statement (true))))
+
+============================================
+Full documentation with assignment
+============================================
+
+local x = {}
+
+--- hello world
+--@param y: add 1
+x.my_func = function(y)
+  return y + 1
+end
+
+---
+
+(program
+  (local_variable_declaration
+    variable: (variable_declarator (identifier)) (table))
+
+  (variable_declaration
+    documentation: (lua_documentation
+      (parameter_documentation
+        name: (identifier)
+        description: (parameter_description)))
+
+    variable: (variable_declarator
+      (field_expression (identifier) (property_identifier)))
+
+    expression: (function_definition
+      (parameters (identifier))
+      (return_statement (binary_operation (identifier) (number))))
+
+    ))
+
+
+============================================
+Full documentation with assignment bracket
+============================================
+
+local x = {}
+
+--- hello world
+--@param y: add 1
+x["my_func"] = function(y)
+  return y + 1
+end
+
+---
+
+(program
+  (local_variable_declaration
+    variable: (variable_declarator (identifier)) (table))
+
+  (variable_declaration
+    documentation: (lua_documentation
+      (parameter_documentation
+        name: (identifier)
+        description: (parameter_description)))
+
+    variable: (variable_declarator (identifier) (string))
+
+    expression: (function_definition
+        (parameters (identifier))
+        (return_statement (binary_operation (identifier) (number))))
+
+    ))
+

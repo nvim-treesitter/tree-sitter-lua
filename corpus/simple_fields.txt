@@ -1,0 +1,12 @@
+============================================
+Simple Fields
+============================================
+
+local x = 1
+
+---
+
+(program
+  (local_variable_declaration
+     (variable_declarator (identifier))
+        (number)))

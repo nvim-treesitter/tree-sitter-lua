@@ -6,7 +6,6 @@ namespace {
   using std::iswspace;
 
   enum TokenType {
-    COMMENT,
     STRING
   };
 
@@ -91,7 +90,7 @@ namespace {
     }
 
     bool scan(TSLexer *lexer, const bool *valid_symbols) {
-      if (valid_symbols[COMMENT] || valid_symbols[STRING]) {
+      if (valid_symbols[STRING]) {
         while (iswspace(lexer->lookahead)) {
           skip(lexer);
         }
@@ -168,24 +167,6 @@ namespace {
               }
             }
           }
-        }
-
-        // Try to make a comment
-        else if (scan_sequence(lexer, "--")) {
-          while (iswspace(lexer->lookahead) && lexer->lookahead != '\n' && lexer->lookahead != 0) {
-            advance(lexer);
-          }
-
-          lexer->result_symbol = COMMENT;
-
-          if (!scan_multiline_content(lexer)) {
-            while (lexer->lookahead != '\n' && lexer->lookahead != 0) {
-              // Consume any character that isn't new line neither end of file (eof)
-              advance(lexer);
-            }
-          }
-
-          return true;
         }
 
         // Try to make a long literal string with double bracket

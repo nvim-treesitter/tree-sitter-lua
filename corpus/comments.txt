@@ -1,4 +1,14 @@
 ============================================
+Simplest comment
+============================================
+
+-- Simple comments work
+
+---
+
+(program (comment))
+
+============================================
 Comments
 ============================================
 
@@ -15,6 +25,7 @@ a level 0 multi-line comment
 
 --[==[
 a level 2 multi-line comment
+we can stil lhave a ] in here
 ]==]
 
 --  [==[
@@ -25,6 +36,7 @@ a level 2 multi-line comment
 
 (program
   (comment)
+
   (comment)
 
   (comment)
@@ -34,3 +46,41 @@ a level 2 multi-line comment
   (comment)
 
   (comment))
+
+============================================
+In-line Comments
+============================================
+
+local a = 1 -- this is a comment
+
+---
+
+(program
+  (local_variable_declaration (variable_declarator (identifier)) (number))
+  (comment))
+
+============================================
+Comments - In between still fine.
+============================================
+
+
+--[==[
+a level 2 multi-line comment
+]==]
+
+x = 1
+
+--  [==[
+a level 2 multi-line ]= comment
+  ]==]
+
+
+---
+
+(program
+  (comment)
+  (variable_declaration
+    (variable_declarator (identifier))
+    (number))
+  (comment))
+
