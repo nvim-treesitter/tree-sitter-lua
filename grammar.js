@@ -84,15 +84,18 @@ module.exports = grammar({
         // sequence(alias($._variable_declarator, $.variable_declarator)),
         // alias($._variable_declarator, $.variable_declarator),
         field('documentation', optional($.lua_documentation)),
-        field('variable', $._variable_declarator),
+        field('variable', alias($._variable_declarator, $.variable_declarator)),
         '=',
-        sequence($._expression),
+        field('expression', sequence($._expression)),
       ),
 
     local_variable_declaration: $ =>
       seq(
         'local',
-        alias($._local_variable_declarator, $.variable_declarator),
+        field(
+          'variable',
+          alias($._local_variable_declarator, $.variable_declarator),
+        ),
         optional(seq('=', sequence($._expression))),
       ),
 

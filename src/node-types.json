@@ -1391,10 +1391,21 @@
   {
     "type": "local_variable_declaration",
     "named": true,
-    "fields": {},
+    "fields": {
+      "variable": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "variable_declarator",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "binary_operation",
@@ -1458,10 +1469,6 @@
         },
         {
           "type": "unary_operation",
-          "named": true
-        },
-        {
-          "type": "variable_declarator",
           "named": true
         }
       ]
@@ -2031,8 +2038,8 @@
           }
         ]
       },
-      "variable": {
-        "multiple": false,
+      "expression": {
+        "multiple": true,
         "required": true,
         "types": [
           {
@@ -2041,6 +2048,10 @@
           },
           {
             "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
             "named": false
           },
           {
@@ -2116,8 +2127,23 @@
             "named": true
           }
         ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "variable_declarator",
+            "named": true
+          }
+        ]
       }
-    },
+    }
+  },
+  {
+    "type": "variable_declarator",
+    "named": true,
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
@@ -2184,21 +2210,6 @@
         },
         {
           "type": "unary_operation",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "variable_declarator",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
           "named": true
         }
       ]

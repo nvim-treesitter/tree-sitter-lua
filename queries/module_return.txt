@@ -1,3 +1,0 @@
-(parameter_documentation
-    name: (identifier) @name
-    description: (parameter_description) @description)

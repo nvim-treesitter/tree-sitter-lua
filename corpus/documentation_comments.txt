@@ -103,18 +103,54 @@ end
 ---
 
 (program
-  (local_variable_declaration (variable_declarator (identifier)) (table))
+  (local_variable_declaration
+    variable: (variable_declarator (identifier)) (table))
 
   (variable_declaration
-    (lua_documentation
+    documentation: (lua_documentation
       (parameter_documentation
         name: (identifier)
         description: (parameter_description)))
 
-    (variable_declarator
+    variable: (variable_declarator
       (field_expression (identifier) (property_identifier)))
 
-      (function_definition
+    expression: (function_definition
+      (parameters (identifier))
+      (return_statement (binary_operation (identifier) (number))))
+
+    ))
+
+
+============================================
+Full documentation with assignment bracket
+============================================
+
+local x = {}
+
+--- hello world
+--@param y: add 1
+x["my_func"] = function(y)
+  return y + 1
+end
+
+---
+
+(program
+  (local_variable_declaration
+    variable: (variable_declarator (identifier)) (table))
+
+  (variable_declaration
+    documentation: (lua_documentation
+      (parameter_documentation
+        name: (identifier)
+        description: (parameter_description)))
+
+    variable: (variable_declarator (identifier) (string))
+
+    expression: (function_definition
         (parameters (identifier))
-        (return_statement (binary_operation (identifier) (number))))))
+        (return_statement (binary_operation (identifier) (number))))
+
+    ))
 

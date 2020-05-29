@@ -200,8 +200,13 @@
           "type": "FIELD",
           "name": "variable",
           "content": {
-            "type": "SYMBOL",
-            "name": "_variable_declarator"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_variable_declarator"
+            },
+            "named": true,
+            "value": "variable_declarator"
           }
         },
         {
@@ -209,29 +214,33 @@
           "value": "="
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_expression"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": ","
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "_expression"
-                  }
-                ]
+          "type": "FIELD",
+          "name": "expression",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": ","
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_expression"
+                    }
+                  ]
+                }
               }
-            }
-          ]
+            ]
+          }
         }
       ]
     },
@@ -243,13 +252,17 @@
           "value": "local"
         },
         {
-          "type": "ALIAS",
+          "type": "FIELD",
+          "name": "variable",
           "content": {
-            "type": "SYMBOL",
-            "name": "_local_variable_declarator"
-          },
-          "named": true,
-          "value": "variable_declarator"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_local_variable_declarator"
+            },
+            "named": true,
+            "value": "variable_declarator"
+          }
         },
         {
           "type": "CHOICE",
