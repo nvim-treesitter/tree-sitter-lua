@@ -77,6 +77,7 @@ module.exports = grammar({
 
     function_keyword: $ => 'function',
     local_keyword: $ => 'local',
+    end_keyword: $ => 'end',
 
     // Statements: Variable eclarations
     variable_declaration: $ => seq(
@@ -106,7 +107,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_statement
+      $.end_keyword
     ),
 
     if_statement: $ => seq(
@@ -117,7 +118,7 @@ module.exports = grammar({
       optional($.return_statement),
       repeat($.elseif),
       optional($.else),
-      $.end_statement
+      $.end_keyword
     ),
 
     elseif: $ => seq(
@@ -140,7 +141,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_statement
+      $.end_keyword
     ),
 
     repeat_statement: $ => seq(
@@ -158,7 +159,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_statement
+      $.end_keyword
     ),
 
     for_in_statement: $ => seq(
@@ -167,7 +168,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_statement
+      $.end_keyword
     ),
 
     _loop_expression: $ => seq(
@@ -249,13 +250,11 @@ module.exports = grammar({
       ')'
     ),
 
-    end_statement: $ => 'end',
-
     _function_body: $ => seq(
       $.parameters,
       repeat($._statement),
       optional($.return_statement),
-      $.end_statement
+      $.end_keyword
     ),
 
     // Expressions

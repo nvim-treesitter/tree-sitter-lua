@@ -241,7 +241,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -703,7 +703,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -786,7 +786,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -869,7 +869,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -1043,7 +1043,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -1211,7 +1211,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -1305,7 +1305,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -2058,7 +2058,7 @@
           "named": true
         },
         {
-          "type": "end_statement",
+          "type": "end_keyword",
           "named": true
         },
         {
@@ -2257,7 +2257,7 @@
     "named": false
   },
   {
-    "type": "end_statement",
+    "type": "end_keyword",
     "named": true
   },
   {
