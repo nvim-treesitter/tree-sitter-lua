@@ -75,9 +75,9 @@ module.exports = grammar({
       alias($.function_call_statement, $.function_call)
     ),
 
-    function_keyword: $ => 'function',
-    local_keyword: $ => 'local',
-    end_keyword: $ => 'end',
+    _function_keyword: $ => 'function',
+    _local_keyword: $ => 'local',
+    _end_keyword: $ => 'end',
 
     // Statements: Variable eclarations
     variable_declaration: $ => seq(
@@ -87,7 +87,7 @@ module.exports = grammar({
     ),
 
     local_variable_declaration: $ => seq(
-      $.local_keyword,
+      $._local_keyword,
       alias($._local_variable_declarator, $.variable_declarator),
       optional(seq('=', sequence($._expression)))
     ),
@@ -107,7 +107,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_keyword
+      $._end_keyword
     ),
 
     if_statement: $ => seq(
@@ -118,7 +118,7 @@ module.exports = grammar({
       optional($.return_statement),
       repeat($.elseif),
       optional($.else),
-      $.end_keyword
+      $._end_keyword
     ),
 
     elseif: $ => seq(
@@ -141,7 +141,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_keyword
+      $._end_keyword
     ),
 
     repeat_statement: $ => seq(
@@ -159,7 +159,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_keyword
+      $._end_keyword
     ),
 
     for_in_statement: $ => seq(
@@ -168,7 +168,7 @@ module.exports = grammar({
       'do',
       repeat($._statement),
       optional($.return_statement),
-      $.end_keyword
+      $._end_keyword
     ),
 
     _loop_expression: $ => seq(
@@ -205,14 +205,14 @@ module.exports = grammar({
 
     // Statements: Function statements
     function_statement: $ => seq(
-      $.function_keyword,
+      $._function_keyword,
       $.function_name,
       $._function_body
     ),
 
     local_function_statement: $ => seq(
-      $.local_keyword,
-      $.function_keyword,
+      $._local_keyword,
+      $._function_keyword,
       $.identifier,
       $._function_body
     ),
@@ -254,7 +254,7 @@ module.exports = grammar({
       $.parameters,
       repeat($._statement),
       optional($.return_statement),
-      $.end_keyword
+      $._end_keyword
     ),
 
     // Expressions
@@ -298,7 +298,7 @@ module.exports = grammar({
 
     // Expressions: Function definition
     function_definition: $ => seq(
-      $.function_keyword,
+      $._function_keyword,
       $._function_body
     ),
 

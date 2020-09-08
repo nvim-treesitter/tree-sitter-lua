@@ -230,7 +230,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "break_statement",
@@ -238,10 +238,6 @@
         },
         {
           "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "end_keyword",
           "named": true
         },
         {
@@ -703,10 +699,6 @@
           "named": true
         },
         {
-          "type": "end_keyword",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         },
@@ -783,10 +775,6 @@
         },
         {
           "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "end_keyword",
           "named": true
         },
         {
@@ -869,10 +857,6 @@
           "named": true
         },
         {
-          "type": "end_keyword",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         },
@@ -890,10 +874,6 @@
         },
         {
           "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_keyword",
           "named": true
         },
         {
@@ -1043,10 +1023,6 @@
           "named": true
         },
         {
-          "type": "end_keyword",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         },
@@ -1064,10 +1040,6 @@
         },
         {
           "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_keyword",
           "named": true
         },
         {
@@ -1211,10 +1183,6 @@
           "named": true
         },
         {
-          "type": "end_keyword",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         },
@@ -1305,10 +1273,6 @@
           "named": true
         },
         {
-          "type": "end_keyword",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         },
@@ -1329,10 +1293,6 @@
           "named": true
         },
         {
-          "type": "function_keyword",
-          "named": true
-        },
-        {
           "type": "goto_statement",
           "named": true
         },
@@ -1350,10 +1310,6 @@
         },
         {
           "type": "local_function",
-          "named": true
-        },
-        {
-          "type": "local_keyword",
           "named": true
         },
         {
@@ -1417,10 +1373,6 @@
         },
         {
           "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "local_keyword",
           "named": true
         },
         {
@@ -2058,10 +2010,6 @@
           "named": true
         },
         {
-          "type": "end_keyword",
-          "named": true
-        },
-        {
           "type": "expression",
           "named": true
         },
@@ -2257,20 +2205,12 @@
     "named": false
   },
   {
-    "type": "end_keyword",
-    "named": true
-  },
-  {
     "type": "false",
     "named": true
   },
   {
     "type": "for",
     "named": false
-  },
-  {
-    "type": "function_keyword",
-    "named": true
   },
   {
     "type": "goto",
@@ -2287,10 +2227,6 @@
   {
     "type": "in",
     "named": false
-  },
-  {
-    "type": "local_keyword",
-    "named": true
   },
   {
     "type": "method",

@@ -168,15 +168,15 @@
         }
       ]
     },
-    "function_keyword": {
+    "_function_keyword": {
       "type": "STRING",
       "value": "function"
     },
-    "local_keyword": {
+    "_local_keyword": {
       "type": "STRING",
       "value": "local"
     },
-    "end_keyword": {
+    "_end_keyword": {
       "type": "STRING",
       "value": "end"
     },
@@ -254,7 +254,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "local_keyword"
+          "name": "_local_keyword"
         },
         {
           "type": "ALIAS",
@@ -418,7 +418,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "end_keyword"
+          "name": "_end_keyword"
         }
       ]
     },
@@ -482,7 +482,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "end_keyword"
+          "name": "_end_keyword"
         }
       ]
     },
@@ -596,7 +596,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "end_keyword"
+          "name": "_end_keyword"
         }
       ]
     },
@@ -682,7 +682,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "end_keyword"
+          "name": "_end_keyword"
         }
       ]
     },
@@ -727,7 +727,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "end_keyword"
+          "name": "_end_keyword"
         }
       ]
     },
@@ -879,7 +879,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "function_keyword"
+          "name": "_function_keyword"
         },
         {
           "type": "SYMBOL",
@@ -896,11 +896,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "local_keyword"
+          "name": "_local_keyword"
         },
         {
           "type": "SYMBOL",
-          "name": "function_keyword"
+          "name": "_function_keyword"
         },
         {
           "type": "SYMBOL",
@@ -1205,7 +1205,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "end_keyword"
+          "name": "_end_keyword"
         }
       ]
     },
@@ -1343,7 +1343,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "function_keyword"
+          "name": "_function_keyword"
         },
         {
           "type": "SYMBOL",
